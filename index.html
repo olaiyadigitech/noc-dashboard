@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="NOC Network Monitoring Dashboard — Ajayi Oluwafemi Olaiya"
+    >
+
+    <title>NOC Dashboard | Network Operations Center</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- NOC Dashboard Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NOC HEADER
+    ====================================================== -->
+    <header class="noc-header">
+
+        <div class="noc-brand">
+
+            <div class="noc-logo">
+                <i class="fas fa-network-wired"></i>
+            </div>
+
+            <div>
+                <h1>NOC Dashboard</h1>
+                <span>Network Operations Center</span>
+            </div>
+
+        </div>
+
+        <div class="noc-header-status">
+
+            <div class="system-status">
+                <span class="status-dot operational"></span>
+                <span>NETWORK OPERATIONAL</span>
+            </div>
+
+            <div class="noc-time" id="noc-time">
+                00:00:00
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN DASHBOARD
+    ====================================================== -->
+    <main class="noc-dashboard">
+
+
+        <!-- =================================================
+             NETWORK OVERVIEW
+        ================================================== -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">SYSTEM OVERVIEW</span>
+                    <h2>Network Status</h2>
+                </div>
+
+                <span class="live-indicator">
+                    <span class="status-dot operational"></span>
+                    LIVE
+                </span>
+
+            </div>
+
+
+            <div class="status-grid">
+
+                <!-- CORE NETWORK -->
+                <article class="status-card operational-card">
+
+                    <div class="status-card-top">
+
+                        <div class="status-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <h3>Core Network</h3>
+
+                    <div class="status-value">
+                        99.98%
+                    </div>
+
+                    <p>Network Availability</p>
+
+                </article>
+
+
+                <!-- METRO -->
+                <article class="status-card operational-card">
+
+                    <div class="status-card-top">
+
+                        <div class="status-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <h3>Metro Aggregation</h3>
+
+                    <div class="status-value">
+                        99.95%
+                    </div>
+
+                    <p>Network Availability</p>
+
+                </article>
+
+
+                <!-- TRANSMISSION -->
+                <article class="status-card operational-card">
+
+                    <div class="status-card-top">
+
+                        <div class="status-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <h3>Transmission</h3>
+
+                    <div class="status-value">
+                        99.97%
+                    </div>
+
+                    <p>Link Availability</p>
+
+                </article>
+
+
+                <!-- ACCESS -->
+                <article class="status-card operational-card">
+
+                    <div class="status-card-top">
+
+                        <div class="status-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <h3>Access Network</h3>
+
+                    <div class="status-value">
+                        99.91%
+                    </div>
+
+                    <p>Network Availability</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NETWORK HEALTH
+        ================================================== -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">NETWORK HEALTH</span>
+                    <h2>Infrastructure Monitoring</h2>
+                </div>
+
+            </div>
+
+
+            <div class="health-grid">
+
+                <!-- OVERALL HEALTH -->
+                <article class="panel health-panel">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            <i class="fas fa-heart-pulse"></i>
+                            Overall Network Health
+                        </h3>
+
+                        <span class="health-score">
+                            98.7%
+                        </span>
+
+                    </div>
+
+
+                    <div class="health-bar">
+
+                        <div
+                            class="health-progress"
+                            style="width: 98.7%;"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="health-details">
+
+                        <div>
+                            <strong>128</strong>
+                            <span>Active Elements</span>
+                        </div>
+
+                        <div>
+                            <strong>124</strong>
+                            <span>Healthy</span>
+                        </div>
+
+                        <div>
+                            <strong>3</strong>
+                            <span>Degraded</span>
+                        </div>
+
+                        <div>
+                            <strong>1</strong>
+                            <span>Critical</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NETWORK LAYERS -->
+                <article class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            <i class="fas fa-layer-group"></i>
+                            Network Layers
+                        </h3>
+
+                    </div>
+
+
+                    <div class="layer-list">
+
+                        <div class="layer-item">
+
+                            <span>Core</span>
+
+                            <div class="mini-bar">
+                                <span style="width: 98%;"></span>
+                            </div>
+
+                            <strong>98%</strong>
+
+                        </div>
+
+
+                        <div class="layer-item">
+
+                            <span>Metro</span>
+
+                            <div class="mini-bar">
+                                <span style="width: 96%;"></span>
+                            </div>
+
+                            <strong>96%</strong>
+
+                        </div>
+
+
+                        <div class="layer-item">
+
+                            <span>Aggregation</span>
+
+                            <div class="mini-bar">
+                                <span style="width: 94%;"></span>
+                            </div>
+
+                            <strong>94%</strong>
+
+                        </div>
+
+
+                        <div class="layer-item">
+
+                            <span>Access</span>
+
+                            <div class="mini-bar">
+                                <span style="width: 91%;"></span>
+                            </div>
+
+                            <strong>91%</strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TRANSMISSION MONITORING
+        ================================================== -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">TRANSMISSION</span>
+                    <h2>Optical Network Monitoring</h2>
+                </div>
+
+                <span class="live-indicator">
+                    <span class="status-dot operational"></span>
+                    MONITORING
+                </span>
+
+            </div>
+
+
+            <div class="transmission-grid">
+
+
+                <!-- DWDM -->
+                <article class="panel transmission-card">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            <i class="fas fa-wave-square"></i>
+                            DWDM
+                        </h3>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <div class="transmission-stat">
+                        <strong>48</strong>
+                        <span>Active Channels</span>
+                    </div>
+
+                    <div class="signal">
+                        <span>Optical Signal</span>
+                        <strong>-18.4 dBm</strong>
+                    </div>
+
+                </article>
+
+
+                <!-- OTN -->
+                <article class="panel transmission-card">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            <i class="fas fa-bolt"></i>
+                            OTN
+                        </h3>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <div class="transmission-stat">
+                        <strong>32</strong>
+                        <span>Active Circuits</span>
+                    </div>
+
+                    <div class="signal">
+                        <span>Utilization</span>
+                        <strong>67%</strong>
+                    </div>
+
+                </article>
+
+
+                <!-- SDH -->
+                <article class="panel transmission-card">
+
+                    <div class="panel-header">
+
+                        <h3>
+                            <i class="fas fa-link"></i>
+                            SDH
+                        </h3>
+
+                        <span class="status-badge operational">
+                            Operational
+                        </span>
+
+                    </div>
+
+                    <div class="transmission-stat">
+                        <strong>24</strong>
+                        <span>Active Links</span>
+                    </div>
+
+                    <div class="signal">
+                        <span>Utilization</span>
+                        <strong>54%</strong>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NETWORK TOPOLOGY
+        ================================================== -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">NETWORK TOPOLOGY</span>
+                    <h2>Infrastructure Flow</h2>
+                </div>
+
+            </div>
+
+
+            <div class="panel topology-panel">
+
+                <div class="topology">
+
+    <div class="topology-node" data-node="core">
+        <i class="fa-solid fa-server"></i>
+        <span>CORE</span>
+        <small>● OPERATIONAL</small>
+    </div>
+
+    <div class="topology-line"></div>
+
+    <div class="topology-node" data-node="metro">
+        <i class="fa-solid fa-network-wired"></i>
+        <span>METRO</span>
+        <small>● OPERATIONAL</small>
+    </div>
+
+    <div class="topology-line"></div>
+
+    <div class="topology-node" data-node="aggregation">
+        <i class="fa-solid fa-diagram-project"></i>
+        <span>AGGREGATION</span>
+        <small>● OPERATIONAL</small>
+    </div>
+
+    <div class="topology-line"></div>
+
+    <div class="topology-node" data-node="access">
+        <i class="fa-solid fa-tower-cell"></i>
+        <span>ACCESS</span>
+        <small>● OPERATIONAL</small>
+    </div>
+
+</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ALARMS & EVENTS
+        ================================================== -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">NOC OPERATIONS</span>
+                    <h2>Alarms &amp; Events</h2>
+                </div>
+
+                <span class="alarm-count">
+                    04 EVENTS
+                </span>
+
+            </div>
+
+
+            <div class="panel alarm-panel">
+
+                <div class="alarm-table">
+
+
+                    <div class="alarm-row alarm-header">
+
+                        <span>TIME</span>
+                        <span>SEVERITY</span>
+                        <span>ELEMENT</span>
+                        <span>EVENT</span>
+                        <span>STATUS</span>
+
+                    </div>
+
+
+                    <div class="alarm-row">
+
+                        <span>08:01:42</span>
+
+                        <span class="severity warning">
+                            WARNING
+                        </span>
+
+                        <span>Metro-AGG-04</span>
+
+                        <span>
+                            High interface utilization
+                        </span>
+
+                        <span class="event-status monitoring">
+                            Monitoring
+                        </span>
+
+                    </div>
+
+
+                    <div class="alarm-row">
+
+                        <span>07:54:18</span>
+
+                        <span class="severity critical">
+                            CRITICAL
+                        </span>
+
+                        <span>OSN-8800-02</span>
+
+                        <span>
+                            Optical power threshold
+                        </span>
+
+                        <span class="event-status investigating">
+                            Investigating
+                        </span>
+
+                    </div>
+
+
+                    <div class="alarm-row">
+
+                        <span>07:41:06</span>
+
+                        <span class="severity info">
+                            INFO
+                        </span>
+
+                        <span>CORE-RTR-01</span>
+
+                        <span>
+                            BGP session established
+                        </span>
+
+                        <span class="event-status resolved">
+                            Resolved
+                        </span>
+
+                    </div>
+
+
+                    <div class="alarm-row">
+
+                        <span>07:29:33</span>
+
+                        <span class="severity info">
+                            INFO
+                        </span>
+
+                        <span>SDH-ADM-12</span>
+
+                        <span>
+                            Maintenance completed
+                        </span>
+
+                        <span class="event-status resolved">
+                            Resolved
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOC ACTIVITY LOG
+        ================================================== -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">OPERATIONS LOG</span>
+                    <h2>Recent NOC Activity</h2>
+                </div>
+
+            </div>
+
+
+            <div class="panel activity-panel">
+
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Network health check completed
+                        </strong>
+
+                        <p>
+                            All monitored core elements responding normally.
+                        </p>
+                    </div>
+
+                    <time>08:00</time>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Metro utilization threshold detected
+                        </strong>
+
+                        <p>
+                            Traffic monitoring initiated on Metro-AGG-04.
+                        </p>
+                    </div>
+
+                    <time>07:54</time>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Scheduled maintenance completed
+                        </strong>
+
+                        <p>
+                            SDH-ADM-12 returned to normal operational state.
+                        </p>
+                    </div>
+
+                    <time>07:29</time>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="noc-footer">
+
+        <p>
+            NOC Dashboard &copy; 2026 Ajayi Oluwafemi Olaiya
+        </p>
+
+        <p>
+            Network Operations &bull; Transmission &bull; Monitoring
+        </p>
+
+    </footer>
+
+
+    <!-- NOC Dashboard JavaScript -->
+    <script src="js/app.js?v=2"></script>
+
+</body>
+</html>
